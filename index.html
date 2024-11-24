@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML -->
+<div class="flex-card-wrapper">
+    <div class="flex-card-container card-01" onclick="toggleAccordion(this)">
+        <div class="text">
+            <h3 class="title active">Aetter Premium (00:00)</h3>
+            <p class="description">Aetter Premium vám prináša tú najlepšiu hudbu bez reklám, aby ste si mohli naplno užiť váš hudobný večer.<br><br>
+                <b>Aetter Premium – keď si chcete dopriať dokonalý hudobný zážitok.</b></p>
+        </div>
+    </div>
+    <div class="flex-card-container card-02" onclick="toggleAccordion(this)">
+        <div class="text">
+            <h3 class="title">Dobré ráno, Trnava!</h3>
+            <p class="description">Aetter Premium vám prináša tú najlepšiu hudbu bez reklám, aby ste si mohli naplno užiť váš hudobný večer.<br><br>
+                <b>Aetter Premium – keď si chcete dopriať dokonalý hudobný zážitok.</b></p>
+        </div>
+    </div>
+    <div class="flex-card-container card-03" onclick="toggleAccordion(this)">
+        <div class="text">
+            <h3 class="title active">Obedná pauzička</h3>
+            <p class="description">Doprajte si chvíľku oddychu s relaxačnou hudbou.<br><br>
+                <b>Užite si harmóniu.</b></p>
+        </div>
+    </div>
+    <div class="flex-card-container card-04" onclick="toggleAccordion(this)">
+        <div class="text">
+            <h3 class="title active">Popoludnie s Aetterom</h3>
+            <p class="description">Pripojte sa k nám na popoludnie plné zábavy a hitov!<br><br>
+                <b>Hudba, ktorá vás baví.</b></p>
+        </div>
+    </div>
+    <div class="flex-card-container card-05" onclick="toggleAccordion(this)">
+        <div class="text">
+            <h3 class="title active">Večerná hudobná bomba</h3>
+            <p class="description">Užívajte si večer s najväčšími hudobnými hitmi.<br><br>
+                <b>Dokonalý večer s hudbou.</b></p>
+        </div>
+    </div>
+    <div class="flex-card-container card-06" onclick="toggleAccordion(this)">
+        <div class="text">
+            <h3 class="title active">Aetter Premium (22:00)</h3>
+            <p class="description">Aetter Premium – užívajte si hudbu bez reklám.<br><br>
+                <b>Váš hudobný relax.</b></p>
+        </div>
+    </div>
+  </div>
+  
+  <!-- CSS -->
+  <style>
+  .flex-card-wrapper h3{
+          margin-block-start: 0;
+          margin-block-end: 0;
+      }
+  
+    .flex-card-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        margin: auto;
+    }
+  
+    .flex-card-container {
+        width: 6%;
+        height: 450px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 0 10px 0 10px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+  
+    /*--- Color overlay for closed card ---*/
+    .flex-card-container::before {
+      content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(25, 25, 25, 0.6); /* Farba prekrytia */
+        z-index: 1;
+    }
+  
+    .flex-card-container.active {
+        width: 50%;
+        display: block;
+    }
+  
+    /*--- Color overlay for opened card ---*/
+    .flex-card-container.active::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(230, 0, 135, 0.5); /* Farba prekrytia */
+        z-index: 1;
+    }
+  
+    /*--- Img backhround for each card ---*/
+    .flex-card-container.card-01 {
+        background-image: url('https://aetter.sk/wp-content/uploads/2024/11/aetter-premium-01.webp');
+    }
+  
+    .flex-card-container.card-02 {
+        background-image: url('https://aetter.sk/wp-content/uploads/2024/11/accordion-img.webp');
+    }
+  
+    .flex-card-container.card-03 {
+        background-image: url('https://aetter.sk/wp-content/uploads/2024/11/obedna-pauzicka.webp');
+    }
+  
+    .flex-card-container.card-04 {
+        background-image: url('https://aetter.sk/wp-content/uploads/2024/11/popoludnie-aetter.webp');
+    }
+  
+    .flex-card-container.card-05 {
+        background-image: url('https://aetter.sk/wp-content/uploads/2024/11/hudobna-bomba.webp');
+    }
+
+    .flex-card-container.card-06 {
+        background-image: url('https://aetter.sk/wp-content/uploads/2024/11/aetter-premium-02.webp');
+    }
+  
+    .text {
+        font-family: Roboto;
+        text-align: left;
+        color: white;
+        width: 80%;
+        position: relative; /* Aby bol text nad pseudo-elementom */
+        z-index: 2;
+    }
+  
+    .flex-card-container.active .text {
+      padding: 40px 40px 20px 40px;
+    }
+  
+    .flex-card-container .title {
+      position: absolute; /* Pridanie absolútnej pozície */
+      bottom: 30px; /* Posunutie na spodok karty */
+      left: 50%; /* Horizontálne centrovanie */
+      transform: translateX(-50%) rotate(180deg); /* Horizontálne vycentrovanie a otočenie textu */
+      writing-mode: vertical-rl; /* Vertikálny text */
+      font-size: 28px;
+      margin: 0;
+      padding: 0;
+  }
+  
+  
+    .flex-card-container.active .title {
+        writing-mode: horizontal-tb;
+        transform: rotate(0);
+        padding: 0;
+        position: relative;
+        left: 0;
+        bottom: 0;
+    }
+    
+    .description {
+        display: none;
+        font-size: 22px;
+        line-height: 1.7rem;
+    }
+  
+    .flex-card-container.active .description {
+        display: block;
+    }
+  
+  @media (max-width: 1024px){
+      .flex-card-wrapper {
+        width: 100%;
+      }
+  
+      .flex-card-container {
+        width: 7%;
+        margin: 0 7px 0 7px;
+      }
+  }
+  
+    /* Mobilné zobrazenie */
+  @media (max-width: 768px) {
+      .flex-card-wrapper {
+          flex-direction: column; /* Karty idú pod seba */
+          align-items: stretch;
+          width: 100%; /* Využitie celej šírky */
+      }
+  
+      .flex-card-container {
+          width: 100%; /* Karty zaberajú celú šírku */
+          margin: 10px 0; /* Medzi kartami */
+          height: auto; /* Dynamická výška pre obsah */
+      }
+  
+      .flex-card-container.active {
+          width: 100%; /* Rozbalená karta zaberá celú šírku */
+          height: 400px; /* Automatická výška podľa obsahu */
+      }
+  
+      .text {
+          padding: 20px; /* Menšie odsadenie textu pre mobil */
+      }
+  
+      .flex-card-container .title {
+          position: static; /* Text už nemusí byť absolútne pozicovaný */
+          writing-mode: horizontal-tb; /* Horizontálny text */
+          transform: rotate(0); /* Bez rotácie */
+          text-align: left;
+          margin-top: 10px;
+      }
+  }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const schedule = [
+        {
+            selector: '.card-01', // Selector pre kartu
+            start: '00:00',      // Začiatok časového intervalu
+            end: '06:59'         // Koniec časového intervalu
+        },
+        {
+            selector: '.card-02',
+            start: '07:00',
+            end: '09:59'
+        },
+        {
+            selector: '.card-03',
+            start: '10:00',
+            end: '13:59'
+        },
+        {
+            selector: '.card-04',
+            start: '14:00',
+            end: '17:59'
+        },
+        {
+            selector: '.card-05',
+            start: '18:21',
+            end: '18:23'
+        },
+        {
+            selector: '.card-06',
+            start: '18:24',
+            end: '23:59'
+        }
+    ];
+
+    // Funkcia na kontrolu aktuálneho času voči časovému intervalu
+    function isCurrentTimeInRange(start, end) {
+        const now = new Date();
+        const currentTime = now.getHours() * 60 + now.getMinutes(); // Aktuálny čas v minútach
+        const [startHours, startMinutes] = start.split(':').map(Number);
+        const [endHours, endMinutes] = end.split(':').map(Number);
+        const startTime = startHours * 60 + startMinutes;
+        const endTime = endHours * 60 + endMinutes;
+
+        return currentTime >= startTime && currentTime <= endTime;
+    }
+
+    // Funkcia na automatické otvorenie kariet podľa časového rozvrhu
+    function autoOpenCards() {
+        schedule.forEach(({ selector, start, end }) => {
+            const card = document.querySelector(selector);
+            if (card) {
+                if (isCurrentTimeInRange(start, end)) {
+                    card.classList.add('active'); // Automaticky otvorí kartu
+                } else {
+                    card.classList.remove('active'); // Zatvorí kartu mimo intervalu
+                }
+            }
+        });
+    }
+
+    // Pridať podporu manuálneho prepínania
+    function toggleAccordion(selectedCard) {
+        const cards = document.querySelectorAll('.flex-card-container');
+        cards.forEach(card => {
+            if (card === selectedCard) {
+                card.classList.toggle('active'); // Prepína aktívny stav kliknutej karty
+            } else {
+                card.classList.remove('active'); // Zavrie ostatné karty
+            }
+        });
+    }
+
+    // Inicializácia pri načítaní stránky
+    autoOpenCards();
+
+    // Automatická aktualizácia každú minútu
+    setInterval(autoOpenCards, 60000);
+
+    // Export funkcie toggleAccordion pre použitie v onclick
+    window.toggleAccordion = toggleAccordion;
+});
+
+</script>
+
+</body>
+</html>
