@@ -18,10 +18,10 @@ https://aetter.sk/
 ## How It Works
 **Time-Based Logic:** <li>JavaScript calculates the current time and compares it to the predefined intervals in the schedule array.</li><br>
 **Dynamic Activation:** <li>The corresponding card for the current time is marked as active, dynamically adjusting the layout.</li><br>
-**User Interaction:** <li>Users can manually toggle cards by clicking on them. Only one card can be active at a time.<li><br>
+**User Interaction:** <li>Users can manually toggle cards by clicking on them. Only one card can be active at a time.</li><br>
 **Responsive Adjustments:** <li>Styles adapt seamlessly to different screen sizes for optimal user experience.</li><br>
 
 ## Getting Started
-**Clone the repository:**<br>
+**Clone the repository:**<br><br>
 ```git clone https://github.com/your-username/aetter-radio-accordion.git```<br><br>
 Open the **index.html** file in your browser to see the accordion in action.
