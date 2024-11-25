@@ -1,4 +1,4 @@
-# Flex-Card Time-Based Accordion for Aetter Radio
+# Flex-Card Time-Based Accordion
 
 This repository contains an HTML, CSS, and JavaScript-based interactive accordion designed for Aetter Radio's schedule. The project dynamically toggles "cards" representing radio programs based on the current time and user interaction, providing a visually appealing and responsive experience.
 <br>
